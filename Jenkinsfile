@@ -3,15 +3,15 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building jenkins file...'
             }
         }
         stage ('Test') {
             steps {
-                echo 'testing...'
+                echo 'testing jekins file...'
             }
         }
-        stage ('Deploy...') {
+        stage ('Deploy jenkins file...') {
             steps {
                 echo 'deploying...'
             }
