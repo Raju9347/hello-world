@@ -1,19 +1,22 @@
 pipeline {
-    agant any
+    agent {
+        docker {
+            image 'node:20.11.0-alpine3.19'
+            args '-p 3000:3000 -p 5000:5000' 
+        }
+    }
+    environment {
+        CI = 'true'
+    }
     stages {
-        stage ('Build') {
+        stage('Build') {
             steps {
-                echo 'Building...'
+                sh 'npm install'
             }
         }
-        stage ('Test') {
+        stage('Test') {
             steps {
-                echo 'testing...'
-            }
-        }
-        stage ('Deploy...') {
-            steps {
-                echo 'deploying...'
+                sh './jenkins/scripts/test.sh'
             }
         }
     }
