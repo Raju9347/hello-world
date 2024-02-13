@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-                echo 'testing jekins file...'
+                echo 'testing jekins...'
             }
         }
         stage ('Deploy jenkins file...') {
